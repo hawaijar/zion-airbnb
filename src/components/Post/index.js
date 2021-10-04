@@ -6,27 +6,34 @@ import {Text, View, Image} from 'react-native';
 const POST_IMAGE_URL =
   'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg';
 
-const Post = () => {
+const Post = ({
+  bed,
+  bedroom,
+  image,
+  type,
+  description,
+  oldPrice,
+  newPrice,
+  totalPrice,
+}) => {
   return (
     <View style={styles.container}>
       {/*image*/}
-      <Image source={{uri: POST_IMAGE_URL}} style={styles.image} />
+      <Image source={{uri: image}} style={styles.image} />
       {/*bed & bedroom*/}
-      <Text style={styles.bedroom}>1 bed 1 bedroom</Text>
+      <Text style={styles.bedroom}>{`${bed} bed ${bedroom} bedroom`}</Text>
       {/*type & description*/}
       <Text style={styles.description} numberOfLines={2}>
-        Entire flat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-        ad minim veniam, quis nostrud
+        {`${type}.${description}`}
       </Text>
       {/*old price & new Price*/}
       <Text style={styles.prices}>
-        <Text style={styles.oldPrice}>$36 </Text>
-        <Text style={styles.newPrice}> $20</Text>
+        <Text style={styles.oldPrice}>{`$${oldPrice}`} </Text>
+        <Text style={styles.newPrice}>{`$${newPrice}`}</Text>
         /night
       </Text>
       {/*total price*/}
-      <Text style={styles.totalPrice}>$120 total</Text>
+      <Text style={styles.totalPrice}>{`$${totalPrice} total`}</Text>
     </View>
   );
 };
