@@ -1,10 +1,10 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import SearchResult from './src/screens/SearchResult';
+import LocationSearch from './src/screens/LocationSearch';
 const App = () => {
   return (
     <SafeAreaView>
-      <SearchResult />
+      <LocationSearch />
     </SafeAreaView>
   );
 };
