@@ -1,10 +1,12 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import LocationSearch from './src/screens/LocationSearch';
+import GuestScreen from './src/screens/Guest';
+// import LocationSearch from './src/screens/LocationSearch';
 const App = () => {
   return (
     <SafeAreaView>
-      <LocationSearch />
+      {/*<LocationSearch />*/}
+      <GuestScreen />
     </SafeAreaView>
   );
 };
