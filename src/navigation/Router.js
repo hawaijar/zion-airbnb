@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import LocationSearch from '../screens/LocationSearch';
 import GuestScreen from '../screens/Guest';
 import HomeTabNavigator from './HomeTabNavigator';
+import SearchResult from '../screens/SearchResult';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +32,13 @@ const Router = () => {
           }}
           name={'guest page'}
           component={GuestScreen}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Search your destination?',
+          }}
+          name={'result page'}
+          component={SearchResult}
         />
       </Stack.Navigator>
     </NavigationContainer>

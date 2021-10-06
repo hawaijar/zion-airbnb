@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import {Text, View, TextInput, FlatList, Pressable} from 'react-native';
+import {View, TextInput, FlatList, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import styles from './style';
 import searchResults from '../../../assets/data/search';
 import LocationResult from '../../components/LocationResult';
-import GuestScreen from '../Guest';
 
 const LocationSearch = () => {
   const navigation = useNavigation();
