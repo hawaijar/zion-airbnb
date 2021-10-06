@@ -1,27 +1,31 @@
 import React, {useState} from 'react';
-
-import {Text, View, TextInput, FlatList} from 'react-native';
+import {Text, View, TextInput, FlatList, Pressable} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import styles from './style';
 import searchResults from '../../../assets/data/search';
 import LocationResult from '../../components/LocationResult';
+import GuestScreen from '../Guest';
 
 const LocationSearch = () => {
+  const navigation = useNavigation();
   const [inputText, setInputText] = useState('');
   return (
-    <View style={styles.container}>
-      {/*Input component*/}
-      <TextInput
-        style={styles.textInput}
-        placeholder={'where are you going?'}
-        value={inputText}
-        onChangeText={setInputText}
-      />
-      {/*List of matched locations*/}
-      <FlatList
-        data={searchResults}
-        renderItem={({item}) => <LocationResult {...item} />}
-      />
-    </View>
+    <Pressable onPress={() => navigation.navigate('guest page')}>
+      <View style={styles.container}>
+        {/*Input component*/}
+        <TextInput
+          style={styles.textInput}
+          placeholder={'where are you going?'}
+          value={inputText}
+          onChangeText={setInputText}
+        />
+        {/*List of matched locations*/}
+        <FlatList
+          data={searchResults}
+          renderItem={({item}) => <LocationResult {...item} />}
+        />
+      </View>
+    </Pressable>
   );
 };
 
